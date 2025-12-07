@@ -1,26 +1,37 @@
 package com.lishui.tourism.service;
 
-import cn.hutool.json.JSONUtil;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lishui.tourism.common.constant.Constants;
 import com.lishui.tourism.common.context.UserContext;
 import com.lishui.tourism.common.exception.BusinessException;
 import com.lishui.tourism.common.result.ResultCode;
-import com.lishui.tourism.entity.*;
-import com.lishui.tourism.mapper.*;
+import com.lishui.tourism.entity.AiChatHistory;
+import com.lishui.tourism.entity.AiItinerary;
+import com.lishui.tourism.entity.Comment;
+import com.lishui.tourism.entity.ScenicSpot;
+import com.lishui.tourism.entity.Tag;
+import com.lishui.tourism.mapper.AiChatHistoryMapper;
+import com.lishui.tourism.mapper.AiItineraryMapper;
+import com.lishui.tourism.mapper.CommentMapper;
+import com.lishui.tourism.mapper.ScenicSpotMapper;
+import com.lishui.tourism.mapper.ScenicTagRelMapper;
+import com.lishui.tourism.mapper.TagMapper;
+
+import cn.hutool.json.JSONUtil;
 import dev.langchain4j.data.message.AiMessage;
 import dev.langchain4j.data.message.SystemMessage;
 import dev.langchain4j.data.message.UserMessage;
 import dev.langchain4j.model.chat.ChatLanguageModel;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * AI 服务

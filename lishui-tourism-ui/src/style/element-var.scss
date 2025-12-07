@@ -1,0 +1,45 @@
+﻿/* Element Plus Custom Theme - Mist of Lishui */
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': #00796B,
+    ),
+    'success': (
+      'base': #67C23A,
+    ),
+    'warning': (
+      'base': #F9A825, /* Secondary Color - 梯田金 */
+    ),
+    'danger': (
+      'base': #F56C6C,
+    ),
+    'error': (
+      'base': #F56C6C,
+    ),
+    'info': (
+      'base': #909399,
+    ),
+  ),
+  $button: (
+    'border-radius': (
+      'base': 8px,
+    ),
+  ),
+  $border-radius: (
+    'base': 8px,
+    'small': 4px,
+    'round': 20px,
+    'circle': 100%,
+  )
+);
+
+/* Custom Variables for usage in components */
+:root {
+  --lishui-primary: #00796B;
+  --lishui-secondary: #F9A825;
+  --lishui-bg: #F5F7FA;
+  --lishui-text-main: #2C3E50;
+  --lishui-text-regular: #606266;
+  --lishui-glass-bg: rgba(255, 255, 255, 0.8);
+  --lishui-glass-blur: 10px;
+}
